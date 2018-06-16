@@ -1,7 +1,7 @@
 %-- Beamer Stuff ---
 \mode<presentation>
 {
-  \usetheme{umbc4}
+  %\usetheme{umbc4}
 }
 \usepackage[english]{babel}
 % or whatever
@@ -21,14 +21,16 @@
 
 \newcommand{\change}[1]{{\red #1}}
 %%%%%% Declarations Defined in custom-foils
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{oblu.eps}}%
 \input{title}
-\subtitle[IoT]{\ \\ \LARGE Representation of Data}
+\subtitle[IoT]{\ \\ \LARGE \psframebox[fillcolor=white,fillstyle=solid,linestyle=none]{\bf Representation of Numbers}}
 
 \begin{document}
 %%-----------------------------------------------------------------------------------------
 %% New Slides
 %%-----------------------------------------------------------------------------------------
 \frame{\titlepage}
+\usebackgroundtemplate{}
 
 \frame{
   \frametitle{Before We Start}
