@@ -2,14 +2,6 @@
 %%%%    Developed by Uday Khedker (uday@cse.iitb.ac.in)
 %%%%    Thu Sep  4 18:45:47 IST 2003
 %%%%    User can use 
-%%%%    NEW COMMAND ADDED LATER ON mON APR 17 13:11:00 IST 2006
-%%%%    
-%%%%    	\putnode{newnode}{oldnode}{deltax}{deltay}{stuffToTypeSet}
-%%%%    
-%%%%    For better control on the distances, please set unit to 1 mm (\psset{unit=1mm}) 
-%%%%    
-%%%%    This make the following commands obsolete.   
-%%%%    FOLLOWING OLD COMMENDS CAN STILL BE USED.
 %%%%    Declaration psrelpoint{point1}{point2}{deltax}{deltay} where deltax and deltay are integers.
 %%%%    The effect is that the x coordinates of point2 = x coordinate of point1 + delta x
 %%%%                           y coordinates of point2 = y coordinate of point1 + delta y
@@ -51,9 +43,13 @@
 \newcommand{\x}[1]{\value{#1xcoordinate}}
 \newcommand{\y}[1]{\value{#1ycoordinate}}
 %\newcommand{\samepar}[2]{\ifx#1#2\string Paramters are same\else\string Paramters are different\fi}
-\newcommand{\putnode}[5]{
-%#1: node, #2: pred, #3: dx, #4: dy, #5: stuff
-\psrelpoint{#2}{#1}{#3}{#4}
-\rput(\x{#1},\y{#1}){\rnode{#1}{#5}}
+%%\newcommand{\putnode}[5]{
+%%%#1: node, #2: pred, #3: dx, #4: dy, #5: stuff
+%%\psrelpoint{#2}{#1}{#3}{#4}
+%%\rput(\x{#1},\y{#1}){\rnode{#1}{#5}}
+%%}
+\newcommand{\putnode}[6][c]{
+%#1: rput position #2: node, #3: pred, #4: dx, #5: dy, #6: stuff
+\psrelpoint{#3}{#2}{#4}{#5}
+\rput[#1](\x{#2},\y{#2}){\rnode{#2}{#6}}
 }
-
